@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, Params} from '@angular/router';
 
 import { GLOBAL } from '../../../services/global';
 import { Animal } from '../../../models/animal';
+import { User } from '../../../models/user';
 import { AnimalService } from '../../../services/animal.service';
 import { UserService } from '../../../services/user.service';
 import { UploadService } from '../../../services/upload.service';
@@ -35,7 +36,7 @@ export class AddComponent implements OnInit{
   	this.identity = this._userService.getIdentity();
   	this.token = this._userService.getToken();
   	this.url = GLOBAL.url;
-  	this.animal = new Animal('','','',2017,'','');
+  	this.animal = new Animal('','','',2017,'', new User('','','','','','',''));
 
   }
 

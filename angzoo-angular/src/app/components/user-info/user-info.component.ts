@@ -41,7 +41,7 @@ export class UserInfoComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(userEditForm){
+  onSubmit(){
   	this._userService.update(this.user).subscribe(
   		response =>{
   			if (response.user){

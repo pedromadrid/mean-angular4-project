@@ -28,6 +28,7 @@ import { AnimalDetailComponent } from './components/animal-detail/animal-detail.
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

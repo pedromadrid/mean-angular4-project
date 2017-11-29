@@ -2,6 +2,7 @@
 
 var express = require('express');
 var bodyParser = require('body-parser');
+var path = require('path');
 
 
 var app = express();
@@ -26,8 +27,13 @@ app.use((req,res,next)=>{
 })
 
 //rutas body-parser
+app.use('/', express.static('client',{redirect: false}));
 app.use('/api', user_routes);
 app.use('/api', animal_routes);
+
+app.get('*', function(req, res, next){
+	res.sendFile(path.resolve('client/index.html'));
+})
 
 
 module.exports = app;

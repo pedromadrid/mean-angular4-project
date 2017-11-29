@@ -1,0 +1,115 @@
+h3 a{
+	color: black;
+}
+
+.navigation.col-lg-12{
+	margin-top: 10px;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.jumbotron{
+	padding: 40px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 1px #ccc;
+}
+
+.navbar .active{
+	border-bottom: 3px solid orange !important;
+}
+
+.navbar-default .navbar-nav>li>a{
+	transition: all 300ms;
+	border-bottom: 3px solid transparent;
+}
+
+.navbar-default .navbar-nav>li>a:hover{
+	transition: all 300ms;
+	border-bottom: 3px solid orange;
+}
+
+.image_for_edit {
+	with:40px; 
+
+}
+
+.avatar{
+	width: 40px;
+	height: 40px;
+	border-radius: 700px;
+	overflow: hidden;
+	margin-top: 6px;
+	margin-right: -7px;
+
+
+}
+.avatar img{
+	width: 100px;
+	margin-right: -10px;
+}
+
+.animal-image-mask,
+.keeper-image-mask {
+	width: 248px;
+	height: 200px;
+	overflow: hidden;
+}
+
+.animal-image-mask img,
+.keeper-image-mask img{
+	max-height: 400px;
+}
+
+
+.boton_transiciones{
+	padding: 10px;
+	background: red;
+	color: white;
+	border-radius: 5px;
+	border: 2px solid blue;
+	transition:all 2s;
+	display: block;
+	width: 150px;
+
+}
+
+.boton_transiciones:hover{
+	text-decoration: none;
+	color: white;
+	cursor: pointer;
+	background: #ccc;
+	border-radius: 20px;
+
+}
+
+.caja_anidada{
+	margin-top: 15px;
+	background: green;
+	border: 5px solid black;
+	width: 200px;
+	height: 200px;
+	/*animation-name: deslizamiento;
+	animation-duration: 2s;*/
+}
+
+@keyframes deslizamiento{
+	from {
+		margin-left: 0px;
+
+	}
+	to {
+		margin-left: 40px;
+	}
+}
+
+@keyframes deslizamiento{
+	from {
+		margin-left: 0px;
+
+	}
+	to {
+		margin-left: 40px;
+	}
+}

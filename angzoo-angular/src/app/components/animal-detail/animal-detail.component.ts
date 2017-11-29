@@ -3,7 +3,9 @@ import { Router, ActivatedRoute, Params} from '@angular/router';
 
 import { GLOBAL } from '../../services/global';
 import { Animal } from '../../models/animal';
+import { User } from '../../models/user';
 import { AnimalService } from '../../services/animal.service';
+
 
 @Component({
   selector: 'app-animal-detail',
@@ -23,7 +25,7 @@ export class AnimalDetailComponent implements OnInit {
   	){
   	this.title = 'Detalles de Animal';
   	this.url = GLOBAL.url;
-  	this.animal= new Animal('','','',0,'','');
+  	this.animal= new Animal('','','',0,'',new User('','','','','','',''));
   }
 
   ngOnInit(){

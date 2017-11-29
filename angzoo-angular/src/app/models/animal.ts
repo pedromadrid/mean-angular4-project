@@ -1,3 +1,5 @@
+import { User } from './user';
+
 export class Animal{
 	constructor(
 			public _id:string,
@@ -5,7 +7,7 @@ export class Animal{
 			public description: string,
 			public year: number,
 			public image:string,
-			public user:string
+			public user:User
 		){}
 	
 }
