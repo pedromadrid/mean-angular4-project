@@ -1,0 +1,47 @@
+<div class="col-lg-6">
+	<h3>
+ 		{{title}}
+	</h3>
+
+	<div class="alert alert-success" *ngIf="message == 'success'">
+		Registro completado correctamente, haz login <a [routerLink]="['/login']">aqui</a>
+	</div>
+	<div class="alert alert-danger" *ngIf="message == 'error'">
+		Ha fallado el registro
+	</div>
+	
+	<form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" class="col-lg-10">
+		<p>
+			<label>Nombre</label>
+			<input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control" required/>
+			<span *ngIf="!name.valid && name.touched">
+				*El campo es obligatorio
+			</span>
+		</p>
+		<p>
+			<label>Apellidos</label>
+			<input type="text" name="surname"  #surname="ngModel" [(ngModel)]="user.surname"  class="form-control" required/>
+			<span *ngIf="!surname.valid && surname.touched">
+				*El campo es obligatorio
+			</span>
+		</p>
+		<p>
+			<label>Correo electónico</label>
+			<input type="email" name="email"  #email="ngModel" [(ngModel)]="user.email" class="form-control" required/>
+			<span *ngIf="!email.valid && email.touched">
+				*El campo es obligatorio
+			</span>			
+		</p>
+		<p>
+			<label>Password</label>
+			<input type="password" name="password"  #password="ngModel" [(ngModel)]="user.password" class="form-control" required/>
+			<span *ngIf="!password.valid && password.touched">
+				*El nombre es obligatorio
+			</span>			
+		</p>
+		<input type="submit" value="{{title}}" class="btn btn-primary" [disabled]="!registerForm.form.valid"/>
+	</form>
+	
+</div>
+
+

@@ -1,0 +1,67 @@
+<div class="col-lg-12" [@fadeIn]>
+<a class="btn btn-success" [@marcar]='state' (click)="activar()">Activar botón</a>
+
+<hr>
+<h4>Animaciones CSS3</h4>
+
+<a class="boton_transiciones">Transiciones</a>
+
+<div class="clearfix"></div>
+
+<div class="caja_anidada"></div>
+
+<hr/>
+<h4>Utilizar jquery dentro de angular</h4>
+<button id="botonjq">Mostrar textos</button>
+<p id="textojq" class="alert alert-warning">
+	texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba 
+</p>
+
+<div id="caja" style="border: 1px solid black; width: 150px; height: 50px">
+	texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba 
+</div>
+
+
+<simple-tiny
+  [elementId]="'my-editor-id'"
+  (onEditorKeyup)="keyupHandlerFunction($event)"
+  >
+</simple-tiny>
+
+<hr/>
+Padre:
+<h1>{{titulo}}</h1>
+<ul>
+	<li>Item 1</li>
+	<li>Item 2</li>
+</ul>
+
+<hr/>
+
+<p>
+Nombre del parque: 
+<input type="text" [(ngModel)]="nombreDelParque" (keyup)="mostrarNombre()"/>
+</p>
+<p>
+Resultado: {{nombreDelParque}}
+</p>
+
+<div>
+	<h4>Datos desde el hijo</h4>
+<ol *ngIf="miParque">
+	<li>{{miParque.nombre}}</li>
+	<li>{{miParque.metros}}</li>
+	<li>{{miParque.vegetacion}}</li>
+</ol>
+</div>
+<hr/>
+
+<p *ngIf="nombreDelParque">
+	Hijo:
+	<parques 	[nombre]="nombreDelParque"
+				[metros]="567"
+				(pasameLosDatos)="verDatosParque($event)"
+
+	></parques>
+</p>
+</div>

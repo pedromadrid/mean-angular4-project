@@ -1,0 +1,42 @@
+<div class="col-lg-10<" [@fadeLateral]>
+	<h3>{{title}}</h3>
+	
+
+	<div class="alert alert-success" *ngIf="message == 'success'">
+		Animal guardado correctamente
+	</div>
+	<div class="alert alert-danger" *ngIf="message == 'error'">
+		Ha fallado algo, no se guardó el animal
+	</div>
+
+<form  #addForm="ngForm" (ngSubmit)="onSubmit(addForm)" class="col-lg-10">
+	<p>
+		<label>Nombre</label>
+		<input type="text" name="name" #name="ngModel" [(ngModel)]="animal.name" class="form-control" required/>
+			<span *ngIf="!name.valid && name.touched">
+				*El campo es obligatorio
+			</span>
+	</p>
+	<p>
+		<label>Descripción</label>
+		<textarea name="description" #description="ngModel" [(ngModel)]="animal.description"  class="form-control" required></textarea>
+		<span *ngIf="!description.valid && description.touched">
+			*El campo es obligatorio
+		</span> 
+	</p>
+	<p>
+		<label>Año</label>
+		<input type="text" name="year" #year="ngModel" [(ngModel)]="animal.year" class="form-control" required/>
+			<span *ngIf="!year.valid && year.touched">
+				*El campo es obligatorio
+			</span>
+	</p>
+
+	<p>
+		<label>Sube la imagen del animal</label>
+		<input type="file" placeholder="Subir imagen" (change) ="fileChangeEvent($event)">
+	</p>
+
+	<input type="submit" value="{{title}}" class="btn btn-success" /> 
+</form>
+</div>

@@ -1,0 +1,58 @@
+<div class="col-lg-12<" [@fadeLateral]>
+<h3>{{title}}</h3>
+
+	<div class="row">
+		<div class="col-lg-1">Buscar</div>
+		<div class="col-lg-5">
+			<input type="text" [(ngModel)]="busqueda"/>
+		</div>
+	</div>
+	<br/>
+	<table class="table table-hover">
+		<thead class="thead default">
+			<tr>
+				<th>Nombre</th>
+				<th>Año</th>
+				<th>Acciones</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let animal of animals | search: busqueda">
+				<td>{{animal.name}}</td>
+				<td>{{animal.year}}</td>
+				<td>
+					<a [routerLink]="['/animal', animal._id]" class="btn btn-sm btn-info">
+					<span class="glyphicon glyphicon-eye-open"></span>
+					</a>
+					<a [routerLink]="['/admin-panel/editar', animal._id]" class="btn btn-sm btn-primary">
+					<span class="glyphicon glyphicon-pencil"></span>
+					</a>
+					<a href="#modalDelete-{{animal._id}}" class="btn btn-sm btn-danger" data-toggle="modal">
+					<span class="glyphicon glyphicon-trash"></span>
+					</a>
+
+					<!-- Modal HTML -->
+					<div id="modalDelete-{{animal._id}}" class="modal fade">
+					    <div class="modal-dialog">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					                <h4 class="modal-title">Confirmación</h4>
+					            </div>
+					            <div class="modal-body">
+					                <p>Confirma la eliminación de <strong>{{animal.name}}</strong>?</p>
+					                <p class="text-warning"><small>Este cambio no tiene vuelta atras, id {{animal._id}}</small></p>
+					            </div>
+					            <div class="modal-footer">
+					                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+					                <button type="button" class="btn btn-danger" (click)="deleteAnimal(animal._id)">Eliminar</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
