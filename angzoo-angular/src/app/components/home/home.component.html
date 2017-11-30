@@ -1,24 +1,31 @@
 <div class="col-lg-8 col-lg-offset-2" [@fadeIn]>
 
-	<div class="jumbotron">
-		<h1>
+	<div class="jumbotron" >
+		<h2>
 			{{title}}
-		</h1>
-		<p>
-			Disfruta de los animales mas exóticos de nuestro zoologico
+		</h2>
+		<p >
+			SPA para registrar animales y cuidadores, panel de administración, y pruebas varias de librerías Javascript
 		</p>
 		<p>
-			<a class="btn btn-primary btn-lg" role="button" [routerLink]="['/animales']">
+			<a class="btn btn-primary btn-lg" role="button" [routerLink]="['/animales']" >
 				Ver animales
 			</a>
-			<a class="btn btn-success btn-lg" role="button" [routerLink]="['/cuidadores']">
+			<a class="btn btn-success btn-lg" role="button" [routerLink]="['/cuidadores']" >
 				Ver cuidadores
 			</a>
-			<a class="btn btn-warning btn-lg" role="button" [routerLink]="['/cuidadores']">
-				Contacta con nosotros
+			<a class="btn btn-warning btn-lg" role="button" [routerLink]="['/tienda']" >
+				Animaciones y JQuery
 			</a>
 		</p>
-	</div>	
+	</div>
+	<div style="margin-left: 50px">
+		<img src="https://angular.io/assets/images/logos/angular/angular.svg" style="height: 100px"> 
+		<img src="https://javabeat.net/wp-content/uploads/2015/09/expressjs.jpg" style="height: 100px;padding-left: 40px">
+		<img src="https://webassets.mongodb.com/_com_assets/cms/MongoDB-Logo-5c3a7405a85675366beb3a5ec4c032348c390b3f142f5e6dddf1d78e2df5cb5c.png" style="height: 80px;padding-left: 40px">
+
+	</div>
+
 </div>
 
 

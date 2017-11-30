@@ -9,7 +9,7 @@ import { fadeIn } from '../animation';
 })
 export class HomeComponent implements OnInit {
 
-	public title = 'Bienvenido a AngZoo';
+	public title = 'Esto es una prueba del stack MEAN';
 
   constructor() { }
 

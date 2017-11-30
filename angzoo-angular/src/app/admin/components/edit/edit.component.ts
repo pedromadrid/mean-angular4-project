@@ -31,7 +31,7 @@ export class EditComponent implements OnInit{
   	private _uploadService: UploadService
 
   	){
-  	this.title = 'editar Animal';
+  	this.title = 'Editar Animal';
   	this.identity = this._userService.getIdentity();
   	this.token = this._userService.getToken();
   	this.url = GLOBAL.url;
